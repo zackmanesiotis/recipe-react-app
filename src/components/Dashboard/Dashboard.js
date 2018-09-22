@@ -1,47 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
+import Grid from "@material-ui/core/Grid/Grid";
+import { withStyles } from "@material-ui/core/styles";
 
-function ButtonAppBar(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.grow}>
-            Upload Resume
-          </Typography>
-          <Button color="inherit">Upload</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+import { styles } from "./Dashboard.css";
+import SearchAppBar from "../SearchAppbar/SearchAppbar";
+import RecipeCard from "../RecipeCards/RecipeCards";
+
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { expanded: false };
+  }
+
+  componentDidMount() {}
+
+  render() {
+    const { classes } = this.props;
+    const recipes = [{}, {}, {}, {}];
+
+    return (
+      <div className={classes.root}>
+        <SearchAppBar />
+
+        <div className={classes.toolbar} />
+
+        <Grid
+          container
+          alignContent="center"
+          alignItems="center"
+          justify="center"
+        >
+          {recipes.map((recipe, index) => {
+            return (
+              <Grid item key={index} className={classes.cardPadding} xs={12} sm={6} md={4}>
+                <RecipeCard />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </div>
+    );
+  }
 }
 
-ButtonAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(Dashboard);

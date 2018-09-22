@@ -1,5 +1,5 @@
 export default class DashService {
-  static method uploadResume(data) {
-    
+  static function getRecipes(data) {
+    return 'lol'
   }
 }

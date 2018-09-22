@@ -1,1 +1,1 @@
-export {DashService} from './DashService'
+export { default as DashService } from "./DashService";
