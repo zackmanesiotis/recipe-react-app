@@ -4,19 +4,23 @@ export const styles = theme => ({
   root: {
     width: '100%',
   },
+
   grow: {
     flexGrow: 1,
   },
+
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
   },
+
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
+
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -31,6 +35,7 @@ export const styles = theme => ({
       width: 'auto',
     },
   },
+
   searchIcon: {
     width: theme.spacing.unit * 9,
     height: '100%',
@@ -40,10 +45,12 @@ export const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   inputRoot: {
     color: 'inherit',
     width: '100%',
   },
+
   inputInput: {
     paddingTop: theme.spacing.unit,
     paddingRight: theme.spacing.unit,
@@ -58,4 +65,8 @@ export const styles = theme => ({
       },
     },
   },
+
+  toolbarColor: {
+    backgroundColor: 'red'
+  }
 });

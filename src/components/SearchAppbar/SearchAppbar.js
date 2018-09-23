@@ -17,7 +17,7 @@ function SearchAppBar(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.toolbarColor}>
           <IconButton
             className={classes.menuButton}
             color="inherit"

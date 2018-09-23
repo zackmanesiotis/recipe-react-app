@@ -1,6 +1,6 @@
 export const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
 
   grow: {
