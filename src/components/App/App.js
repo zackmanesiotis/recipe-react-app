@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import "./App.css";
-import Dashboard from './components/Dashboard/Dashboard';
+import Dashboard from '../Dashboard/Dashboard';
 import {Redirect} from "react-router";
 
 class App extends Component {
